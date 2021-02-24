@@ -14,11 +14,11 @@ public abstract class Reparation
 	
 	// Constructors ----------------------------------------------------------------------------------------------------------
 	
-	public Reparation(String d, String k, int e, Mecanicien m) // Un seul mécanicien, sans commentaire
+	public Reparation(String d, String k, Mecanicien m) // Un seul mécanicien, sans commentaire
 	{
 		this.description = d;
 		this.keyword = k;
-		this.etat = e;
+		this.etat = 0;
 		this.dateDebutRepar = LocalTime.now();
 		this.dateFinRepar = null;
 		this.commentaire = null;
@@ -26,26 +26,26 @@ public abstract class Reparation
 		this.mecaniciens[0] = m;
 	}
 	
-	public Reparation(String d, String k, int e, Mecanicien m, Commentaire c) // Un seul mécanicien, avec commentaire
+	public Reparation(String d, String k, Mecanicien m, Commentaire c) // Un seul mécanicien, avec commentaire
 	{
-		this(d, k, e, m);
+		this(d, k, m);
 		this.commentaire = c;
 	}
 	
-	public Reparation(String d, String k, int e, Mecanicien[] m) // Plusieurs mécaniciens, sans commentaire
+	public Reparation(String d, String k, Mecanicien[] m) // Plusieurs mécaniciens, sans commentaire
 	{
 		this.description = d;
 		this.keyword = k;
-		this.etat = e;
+		this.etat = 0;
 		this.dateDebutRepar = LocalTime.now();
 		this.dateFinRepar = null;
 		this.commentaire = null;
 		this.mecaniciens = m.clone();
 	}
 	
-	public Reparation(String d, String k, int e, Mecanicien[] m, Commentaire c) // Plusieurs mécaniciens, avec commentaire
+	public Reparation(String d, String k, Mecanicien[] m, Commentaire c) // Plusieurs mécaniciens, avec commentaire
 	{
-		this(d, k, e, m);
+		this(d, k, m);
 		this.commentaire = c;
 	}
 	
@@ -100,11 +100,13 @@ public abstract class Reparation
 	public void startReparation()
 	{
 		this.dateDebutRepar = LocalTime.now();
+		this.etat = 1;
 	}
 	
 	public void stopReparation()
 	{
 		this.dateFinRepar = LocalTime.now();
+		this.etat = 2;
 	}
 	
 	// Getters and Setters ---------------------------------------------------------------------------------------------------

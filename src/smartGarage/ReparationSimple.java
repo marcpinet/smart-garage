@@ -8,30 +8,30 @@ public class ReparationSimple extends Reparation
 	
 	// Constructors ----------------------------------------------------------------------------------------------------------
 	
-	public ReparationSimple(String d, String k, int e, Mecanicien m, double ch) // Un seul mécanicien, sans commentaire
+	public ReparationSimple(String d, String k, Mecanicien m, double ch) // Un seul mécanicien, sans commentaire
 	{
-		super(d, k, e, m);
+		super(d, k, m);
 		this.cout = 0;
 		this.coutHoraire = ch;
 	}
 	
-	public ReparationSimple(String d, String k, int e, Mecanicien m, Commentaire c, double ch) // Un seul mécanicien, avec commentaire
+	public ReparationSimple(String d, String k, Mecanicien m, Commentaire c, double ch) // Un seul mécanicien, avec commentaire
 	{
-		super(d, k, e, m, c);
+		super(d, k, m, c);
 		this.cout = 0;
 		this.coutHoraire = ch;
 	}
 	
-	public ReparationSimple(String d, String k, int e, Mecanicien[] m, double ch) // Plusieurs mécaniciens, sans commentaire
+	public ReparationSimple(String d, String k, Mecanicien[] m, double ch) // Plusieurs mécaniciens, sans commentaire
 	{
-		super(d, k, e, m);
+		super(d, k, m);
 		this.cout = 0;
 		this.coutHoraire = ch;
 	}
 	
-	public ReparationSimple(String d, String k, int e, Mecanicien[] m, Commentaire c, double ch) // Plusieurs mécaniciens, avec commentaire
+	public ReparationSimple(String d, String k, Mecanicien[] m, Commentaire c, double ch) // Plusieurs mécaniciens, avec commentaire
 	{
-		super(d, k, e, m, c);
+		super(d, k, m, c);
 		this.cout = 0;
 		this.coutHoraire = ch;
 	}
@@ -49,7 +49,7 @@ public class ReparationSimple extends Reparation
 	
 	public double calculCout()
 	{
-		return this.coutHoraire * this.calculCout();
+		return this.coutHoraire * (this.calculDuree() / 60.0);
 	}
 	
 	// Getters and Setters ---------------------------------------------------------------------------------------------------
