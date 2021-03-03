@@ -19,7 +19,7 @@ public class Client
 	
 	// Methods ---------------------------------------------------------------------------------------------------------------
 
-	public void ajouterVehiculeAClient(Vehicule v)
+	public void ajouterVehiculeAClient(Vehicule v) // Afin d'attribuer au client le ou les véhicules qu'il possède et d'en rajouter si jamais.
 	{
 		int i = 0;
 		while(this.vehicules != null) i++;
@@ -41,6 +41,35 @@ public class Client
 			
 		}
 		return retour + ")";
+	}
+	
+	public String getAvancement() // Méthode permettant au client de recevoir une liste des réparations faites sur un ou plusieurs de ses véhicules avec leur état d'avancement.
+	{
+		String retourFinal = "";
+		int i = 0;
+		int j = 0;
+		while(this.vehicules[i] != null)
+		{
+			retourFinal = retourFinal.concat("Véhicule n°" + i + ":\n");
+			
+			while(this.vehicules[i].getFicheSuiveuse().getReparations()[j] != null)
+			{
+				retourFinal = retourFinal.concat("Réparation n°" + j + ": ");
+				
+				if(this.vehicules[i].getFicheSuiveuse().getReparations()[j].getEtat() == 0)
+					retourFinal = retourFinal.concat("En attente\n");
+				
+				else if(this.vehicules[i].getFicheSuiveuse().getReparations()[j].getEtat() == 1)
+					retourFinal = retourFinal.concat("En cours\n");
+				
+				else if(this.vehicules[i].getFicheSuiveuse().getReparations()[j].getEtat() == 2)
+					retourFinal = retourFinal.concat("Achevée\n");
+					
+				j++;
+			}
+			i++;
+		}
+		return retourFinal;
 	}
 	
 	// Getters and Setters ---------------------------------------------------------------------------------------------------

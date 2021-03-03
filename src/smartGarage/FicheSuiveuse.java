@@ -38,7 +38,7 @@ public class FicheSuiveuse
 		return retour + ")";
 	}
 	
-	public void saveFicheSuiveuse()
+	public void saveFicheSuiveuse() // Enregistrer une copie de la fiche suiveuse avec toutes les informations liées à celle-ci + nom personnalisé
 	{
 		String nomFichier = "fichesuivese" + nbFicheSuiveusesTotal + "-" + LocalTime.now().toString() + ".txt";
 		
