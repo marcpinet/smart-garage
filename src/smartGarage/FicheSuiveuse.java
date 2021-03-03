@@ -30,7 +30,7 @@ public class FicheSuiveuse
 		int i = 0;
 		String retour = "FicheSuiveuse(";
 		
-		while(this.reparations[i] != null)
+		while(this.reparations[i] != null && i < this.reparations.length)
 		{
 			retour = retour.concat(this.reparations[i].toString());
 			i++;

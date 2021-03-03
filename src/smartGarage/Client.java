@@ -22,7 +22,7 @@ public class Client
 	public void ajouterVehiculeAClient(Vehicule v) // Afin d'attribuer au client le ou les véhicules qu'il possède et d'en rajouter si jamais.
 	{
 		int i = 0;
-		while(this.vehicules != null) i++;
+		while(this.vehicules[i] != null && i < this.vehicules.length) i++;
 		this.vehicules[i] = v;
 	}
 	
@@ -31,7 +31,7 @@ public class Client
 		int i = 0;
 		String retour = "Client(nom=" + this.nom + ", prenom=" + this.prenom + ", mail=" + this.mail + ", ";
 		
-		while(this.vehicules[i] != null)
+		while(this.vehicules[i] != null && i < this.vehicules.length)
 		{
 			retour = retour.concat(this.vehicules[i].toString());
 			if(i+1 < this.vehicules.length)
@@ -48,11 +48,11 @@ public class Client
 		String retourFinal = "";
 		int i = 0;
 		int j = 0;
-		while(this.vehicules[i] != null)
+		while(this.vehicules[i] != null && i < this.vehicules.length)
 		{
 			retourFinal = retourFinal.concat("Véhicule n°" + i + ":\n");
 			
-			while(this.vehicules[i].getFicheSuiveuse().getReparations()[j] != null)
+			while(this.vehicules[i].getFicheSuiveuse().getReparations()[j] != null && j < this.vehicules[i].getFicheSuiveuse().getReparations().length)
 			{
 				retourFinal = retourFinal.concat("Réparation n°" + j + ": ");
 				

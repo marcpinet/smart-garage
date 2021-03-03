@@ -75,7 +75,7 @@ public abstract class Reparation implements InterfaceCout
 				retour = "Reparation(description=" + this.description + ", keyword=" + this.keyword + ", etat=" + this.etat
 				+ ", dateDebutRepar=" + this.dateDebutRepar + ", dateFinRepar=non-terminé, mecaniciens=";
 		
-		while(this.mecaniciens[i] != null)
+		while(this.mecaniciens[i] != null && i < this.mecaniciens.length)
 		{
 			retour = retour.concat(this.mecaniciens[i].toString());
 			if(i+1 < this.mecaniciens.length)
