@@ -2,7 +2,7 @@ package smartGarage;
 import java.time.Duration;
 import java.time.LocalTime;
 
-public abstract class Reparation
+public abstract class Reparation implements InterfaceCout
 {
 	private String description;
 	private String keyword;
@@ -50,8 +50,6 @@ public abstract class Reparation
 	}
 	
 	// Methods ---------------------------------------------------------------------------------------------------------------
-	
-	public abstract double calculCout();
 	
 	@Override
 	public String toString()
