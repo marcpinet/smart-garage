@@ -5,23 +5,20 @@ import java.time.LocalTime;
 
 public class FicheSuiveuse
 {
-	private Vehicule vehicule;
 	private Reparation[] reparations;
 	private static int nbFicheSuiveusesTotal = 0;
 	
 	// Constructors ----------------------------------------------------------------------------------------------------------
 	
-	public FicheSuiveuse(Vehicule v, Reparation r) // Si une seule et unique réparation est associée à un véhicule
+	public FicheSuiveuse(Reparation r) // Si une seule et unique réparation est associée à un véhicule
 	{
-		this.vehicule = v;
 		this.reparations = new Reparation[1];
 		this.reparations[0] = r;
 		nbFicheSuiveusesTotal++;
 	}
 	
-	public FicheSuiveuse(Vehicule v, Reparation[] r) // Si plusieurs réparations sont associées au même véhicule
+	public FicheSuiveuse(Reparation[] r) // Si plusieurs réparations sont associées au même véhicule
 	{
-		this.vehicule = v;
 		this.reparations = r.clone();
 		nbFicheSuiveusesTotal++;
 	}
@@ -31,7 +28,7 @@ public class FicheSuiveuse
 	public String toString()
 	{
 		int i = 0;
-		String retour = "FicheSuiveuse(" + this.vehicule.toString() + ", " ;
+		String retour = "FicheSuiveuse(";
 		
 		while(this.reparations[i] != null)
 		{
@@ -61,16 +58,6 @@ public class FicheSuiveuse
 	}
 	
 	// Getters and Setters ---------------------------------------------------------------------------------------------------
-	
-	public Vehicule getVehicule()
-	{
-		return vehicule;
-	}
-
-	public void setVehicule(Vehicule vehicule)
-	{
-		this.vehicule = vehicule;
-	}
 
 	public Reparation[] getReparations()
 	{

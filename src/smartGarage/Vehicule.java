@@ -8,16 +8,18 @@ public class Vehicule
 	private Color couleur;
 	private int nbCylindre;
 	private double contenanceCylindre;
+	private FicheSuiveuse ficheSuiveuse;
 	
 	// Constructors ----------------------------------------------------------------------------------------------------------
 	
-	public Vehicule(String marque, String modele, Color couleur, int nbCylindre, double contenanceCylindre)
+	public Vehicule(String marque, String modele, Color couleur, int nbCylindre, double contenanceCylindre, FicheSuiveuse ficheSuiveuse)
 	{
 		this.marque = marque;
 		this.modele = modele;
 		this.couleur = couleur;
 		this.nbCylindre = nbCylindre;
 		this.contenanceCylindre = contenanceCylindre;
+		this.ficheSuiveuse = ficheSuiveuse;
 	}
 	
 	// Methods ---------------------------------------------------------------------------------------------------------------
@@ -25,7 +27,7 @@ public class Vehicule
 	public String toString()
 	{
 		return "Vehicule(marque=" + this.marque + ", modele=" + this.modele + ", couleur=" + this.couleur + ", nbCylindre="
-				+ this.nbCylindre + ", contenanceCylindre=" + this.contenanceCylindre + ")";
+				+ this.nbCylindre + ", contenanceCylindre=" + this.contenanceCylindre + ", ficheSuiveuse=" + this.ficheSuiveuse.toString() + ")";
 	}
 	
 	// Getters and Setters ---------------------------------------------------------------------------------------------------
@@ -79,4 +81,16 @@ public class Vehicule
 	{
 		this.contenanceCylindre = contenanceCylindre;
 	}
+
+	public FicheSuiveuse getFicheSuiveuse()
+	{
+		return ficheSuiveuse;
+	}
+
+	public void setFicheSuiveuse(FicheSuiveuse ficheSuiveuse)
+	{
+		this.ficheSuiveuse = ficheSuiveuse;
+	}
+	
+	
 }
