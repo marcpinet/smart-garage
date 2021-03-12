@@ -2,4 +2,4 @@
 
 M214 - Conception Orientée Objet // Étude du Fil-Rouge : Garage Intelligent
 
-![DiagUMLClass](https://i.imgur.com/kPG0vcO.png)
+![DiagUMLClass](https://i.imgur.com/u4PYfr8.png)
