@@ -1,2 +1,0 @@
-Si vous souhaitez utiliser ce fichier (contenant le diagramme de classe UML de ce projet)
-veuillez installer ObjectAid (extension Eclipse)
