@@ -12,7 +12,7 @@ public abstract class Reparation implements InterfaceCout
 {
 	private String description;
 	private String keyword;
-	private int etat; // 0 = En attente | 1 = En cours | 2 = TerminÃ©e/AbandonnÃ©e
+	private int etat; // 0 = En attente | 1 = En cours | 2 = TerminÃƒÂ©e/AbandonnÃƒÂ©e
 	private LocalTime dateDebutRepar;
 	private LocalTime dateFinRepar;
 	private Commentaire commentaire;
@@ -21,7 +21,7 @@ public abstract class Reparation implements InterfaceCout
 	// Constructors ----------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Constructeur pour un seul mécanicien, sans commentaire
+	 * Constructeur pour un seul mÃ©canicien, sans commentaire
 	 * @param d
 	 * @param k
 	 * @param m
@@ -39,7 +39,7 @@ public abstract class Reparation implements InterfaceCout
 	}
 	
 	/**
-	 * Constructeur pour un seul mécanicien, avec commentaire
+	 * Constructeur pour un seul mÃ©canicien, avec commentaire
 	 * @param d
 	 * @param k
 	 * @param m
@@ -52,7 +52,7 @@ public abstract class Reparation implements InterfaceCout
 	}
 	
 	/**
-	 * Constructeur pour plusieurs mécaniciens, sans commentaire
+	 * Constructeur pour plusieurs mÃ©caniciens, sans commentaire
 	 * @param d
 	 * @param k
 	 * @param m
@@ -69,7 +69,7 @@ public abstract class Reparation implements InterfaceCout
 	}
 	
 	/**
-	 * Constructeur pour plusieurs mécaniciens, avec commentaire
+	 * Constructeur pour plusieurs mÃ©caniciens, avec commentaire
 	 * @param d
 	 * @param k
 	 * @param m
@@ -111,11 +111,11 @@ public abstract class Reparation implements InterfaceCout
 			retour = retour.concat(m.toString());
 			retour = retour.concat(", ");
 		}
-		return retour.substring(retour.length() - 1) + ")";
+		return retour.substring(0, retour.length() - 2) + ")";
 	}
 	
 	/**
-	 * Méthode permettant de calculer la durée totale de toutes les réparations entreprises sur la voiture
+	 * MÃ©thode permettant de calculer la durÃ©e totale de toutes les rÃ©parations entreprises sur la voiture
 	 * @return
 	 */
 	public long calculDuree()
@@ -127,7 +127,7 @@ public abstract class Reparation implements InterfaceCout
 	}
 	
 	/**
-	 * Lancement d'une réparation
+	 * Lancement d'une rÃ©paration
 	 */
 	public void startReparation()
 	{
@@ -136,7 +136,7 @@ public abstract class Reparation implements InterfaceCout
 	}
 	
 	/**
-	 * Arrêt d'une réparation
+	 * ArrÃªt d'une rÃ©paration
 	 */
 	public void stopReparation()
 	{
