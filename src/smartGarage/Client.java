@@ -12,7 +12,7 @@ public class Client
 	private String prenom;
 	private String mail;
 	private ArrayList<Vehicule> vehicules;
-	private int moyenPaiement; // -1 = non défini, 0 = Espèces, 1 = Carte Bancaire
+	private int moyenPaiement; // -1 = non dÃ©fini, 0 = EspÃ¨ces, 1 = Carte Bancaire
 	
 	// Constructors ----------------------------------------------------------------------------------------------------------
 	
@@ -34,7 +34,7 @@ public class Client
 	// Methods ---------------------------------------------------------------------------------------------------------------
 
 	/**
-	 * Méthode permettant d'attribuer au client le ou les véhicules qu'il possède et d'en rajouter si jamais.
+	 * MÃ©thode permettant d'attribuer au client le ou les vÃ©hicules qu'il possÃ¨de et d'en rajouter si jamais.
 	 * @param v
 	 */
 	public void ajouterVehiculeAClient(Vehicule v)
@@ -51,11 +51,11 @@ public class Client
 			retour = retour.concat(v.toString());
 			retour = retour.concat(", ");
 		}
-		return retour.substring(retour.length() - 1) + ")";
+		return retour.substring(0, retour.length() - 2) + ")";
 	}
 	
 	/**
-	 * Méthode permettant au client de recevoir une liste des réparations faites sur un ou plusieurs de ses véhicules avec leur état d'avancement.
+	 * MÃ©thode permettant au client de recevoir une liste des rÃ©parations faites sur un ou plusieurs de ses vÃ©hicules avec leur Ã©tat d'avancement.
 	 * @return
 	 */
 	public String getAvancement()
@@ -65,11 +65,11 @@ public class Client
 		int j = 0;
 		for(Vehicule v : this.vehicules)
 		{
-			retourFinal = retourFinal.concat("Véhicule n°" + i + ": " + v.toString() + "\n");
+			retourFinal = retourFinal.concat("VÃ©hicule nÂ°" + i + ": " + v.toString() + "\n");
 			
 			for(Reparation r : this.vehicules.get(j).getFicheSuiveuse().getReparations())
 			{
-				retourFinal = retourFinal.concat("RÃ©paration nÂ°" + j + ": ");
+				retourFinal = retourFinal.concat("RÃƒÂ©paration nÃ‚Â°" + j + ": ");
 				
 				if(r.getEtat() == 0)
 					retourFinal = retourFinal.concat("En attente\n");
@@ -78,7 +78,7 @@ public class Client
 					retourFinal = retourFinal.concat("En cours\n");
 				
 				else if(r.getEtat() == 2)
-					retourFinal = retourFinal.concat("AchevÃ©e\n");
+					retourFinal = retourFinal.concat("AchevÃƒÂ©e\n");
 					
 				j++;
 			}
@@ -88,8 +88,8 @@ public class Client
 	}
 	
 	/**
-	 * Permet d'enregistrer un moyen de paiement et le transférer à la machine appropriée
-	 * 0 = Espèces, 1 = Carte bancaire
+	 * Permet d'enregistrer un moyen de paiement et le transfÃ©rer Ã  la machine appropriÃ©e
+	 * 0 = EspÃ¨ces, 1 = Carte bancaire
 	 * @param a
 	 * @throws IllegalStateException
 	 */
@@ -104,7 +104,7 @@ public class Client
 				this.moyenPaiement = 0;
 				break;
 			default:
-				throw new IllegalStateException("Une erreur innatendue est survenue. Vérifiez la validité du moyen de paiement.");
+				throw new IllegalStateException("Une erreur innatendue est survenue. VÃ©rifiez la validitÃ© du moyen de paiement.");
 		}
 	}
 	
