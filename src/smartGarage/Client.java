@@ -69,7 +69,7 @@ public class Client
 			
 			for(Reparation r : this.vehicules.get(j).getFicheSuiveuse().getReparations())
 			{
-				retourFinal = retourFinal.concat("RÃ©paration nÂ°" + j + ": ");
+				retourFinal = retourFinal.concat("Réparation n°" + j + ": ");
 				
 				if(r.getEtat() == 0)
 					retourFinal = retourFinal.concat("En attente\n");
