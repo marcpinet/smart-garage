@@ -17,7 +17,7 @@ public class FicheSuiveuse
 	// Constructors ----------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Si une seule et unique réparation est associée à un véhicule
+	 * Si une seule et unique rÃ©paration est associÃ©e Ã  un vÃ©hicule
 	 * @param r
 	 */
 	public FicheSuiveuse(Reparation r)
@@ -29,7 +29,7 @@ public class FicheSuiveuse
 	}
 	
 	/**
-	 * Si plusieurs réparations sont associées au même véhicule
+	 * Si plusieurs rÃ©parations sont associÃ©es au mÃªme vÃ©hicule
 	 * @param r
 	 */
 	public FicheSuiveuse(ArrayList<Reparation> r)
@@ -43,7 +43,7 @@ public class FicheSuiveuse
 	
 	public String toString()
 	{
-		String retour = "FicheSuiveuse(";
+		String retour = "FicheSuiveuse(id=" + this.id + ", ";
 		
 		for(Reparation r : this.reparations)
 		{
@@ -53,20 +53,20 @@ public class FicheSuiveuse
 	}
 	
 	/**
-	 *  Enregistrer une copie de la fiche suiveuse avec toutes les informations liées à celle-ci + nom personnalisé selon la date et l'heure
+	 *  Enregistrer une copie de la fiche suiveuse avec toutes les informations liÃ©es Ã  celle-ci + nom personnalisÃ© selon la date et l'heure
 	 */
 	public void saveFicheSuiveuse()
 	{
 		String nomFichier = "fichesuivese" + this.id + "-" + LocalTime.now().toString() + ".txt";
 		
-		String finalString = nomFichier.replace(":", "-"); // Car Windows ne peut pas créer de fichiers avec des ':' dedans.
+		String finalString = nomFichier.replace(":", "-"); // Car Windows ne peut pas crÃ©er de fichiers avec des ':' dedans.
 				
 		try {
 		      File fichier = new File(finalString);
 		      if (fichier.createNewFile()) 
-		    	  System.out.println("Fichier crée avec succès au chemin : " + fichier.getAbsolutePath());
+		    	  System.out.println("Fichier crÃ©e avec succÃ¨s au chemin : " + fichier.getAbsolutePath());
 		      else 
-		    	  System.out.println("Fichier déjà  existant..");
+		    	  System.out.println("Fichier dÃ©jÃ Â  existant..");
 		} 
 		catch (IOException e) {
 		      System.out.println("Une erreur s'est produite");
